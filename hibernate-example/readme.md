@@ -25,7 +25,7 @@ Point your browser at
 Some example graphql queries might be
 
      {
-       hero {
+       human(id: "1000") {
          name
          friends {
            name
@@ -33,7 +33,7 @@ Some example graphql queries might be
              id
              name
            }
-           
+
          }
        }
      }
