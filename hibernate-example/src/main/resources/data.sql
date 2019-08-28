@@ -4,11 +4,17 @@ INSERT INTO FILM_CHARACTER (DTYPE, ID, NAME, HOME_PLANET, PRIMARY_FUNCTION) VALU
     ('Human', 1002, 'Han Solo', null, null),
     ('Human', 1003, 'Leia Organa', 'Alderaan', null),
     ('Human', 1004, 'Wilhuff Tarkin', null, null),
+    ('Human', 1005, 'People 1', 'Earth', null),
+    ('Human', 1006, 'People 2', 'Earth', null),
+    ('Human', 1007, 'People 3', 'Earth', null),
     ('Droid', 2000, 'C-3PO', null, 'Protocol'),
     ('Droid', 2001, 'R2-D2', null, 'Astromech');
 
 INSERT INTO CHARACTER_FRIEND (CHARACTER_ID, FRIEND_ID) VALUES
     (1000, 1002),
+    (1002, 1005),
+    (1005, 1006),
+    (1006, 1007),
     (1000, 1003),
     (1000, 2000),
     (1000, 2001),
@@ -48,4 +54,6 @@ INSERT INTO MOVIE_APPEARANCE (FILM_CHARACTER_ID, EPISODE) VALUES
    (2000, 'JEDI'),
    (2001, 'NEWHOPE'),
    (2001, 'EMPIRE'),
-   (2001, 'JEDI');
+   (1005, 'NEWHOPE'),
+   (1006, 'NEWHOPE'),
+   (1007, 'NEWHOPE');

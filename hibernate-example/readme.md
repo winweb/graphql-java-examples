@@ -33,7 +33,6 @@ Some example graphql queries might be
              id
              name
            }
-
          }
        }
      }
@@ -59,4 +58,75 @@ or maybe
       }
     }
 
+#Add peoples data (test many nest data).
+
+inquiry data by
+
+     {
+       human(id: "1005") {
+         id
+         name
+         friends {
+           id
+           name
+           friends {
+             id
+             name
+             friends {
+               id
+               name
+               friends {
+                 id
+                 name
+                 friends {
+                   id
+                   name
+                 }
+               }
+             }
+           }
+         }
+       }
+     }
+
+result
+
+    {
+      "data": {
+        "human": {
+          "id": "1005",
+          "name": "People 1",
+          "friends": [
+            {
+              "id": "1006",
+              "name": "People 2",
+              "friends": [
+                {
+                  "id": "1007",
+                  "name": "People 3",
+                  "friends": [
+                    {
+                      "id": "1008",
+                      "name": "People 4",
+                      "friends": [
+                        {
+                          "id": "1009",
+                          "name": "People 5",
+                          "friends": [
+                            {
+                              "id": "2001",
+                              "name": "R2-D2"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
 
